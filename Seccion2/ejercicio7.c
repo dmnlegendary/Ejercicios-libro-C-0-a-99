@@ -5,7 +5,15 @@ Escribe en C un programa que genere combinaciones aleatorias para jugar a la qui
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <unistd.h>  // necesario para sleep()
+
+// Dependiendo el Sistema Operativo será la biblioteca a usar para la funcion sleep()
+#ifdef _WIN32
+    #include <windows.h>
+    #define SLEEP(ms) Sleep(ms) // el valor en ms para el retraso en ejecución ms = 1 quiere decir 1 milisegundo; mientras que 1000 es 1s
+#else
+    #include <unistd.h>
+    #define SLEEP(ms) usleep(ms * 1000) // el valor en segundo, ms = 1 -> usleep(1 * 1000) == 1 segundo
+#endif
 
 int main() {
     // Inicializar la semilla para números aleatorios
@@ -21,7 +29,7 @@ int main() {
 
         printf("Partido %2d: %c\n", i, simbolo);
 
-        sleep(1);
+        SLEEP(1000);
     }
 
     return 0;
