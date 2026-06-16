@@ -23,6 +23,13 @@ Aquí encontrarás ejemplos claros y reutilizables que te ayudarán a reforzar c
 
 ## 🚀 Cómo usarlo
 
-1. Clona el repositorio:
+1. Clona el repositorio, consulta o edita a tu gusto:
    ```bash
    git clone https://github.com/dmnlegendary/Ejercicios-libro-C-0-a-99.git
+   
+2. No olvides compilar si haces cambios (por ejemplo):
+   ```cmd
+   gcc .\Seccion2\ejercicio_01.c -o .\Seccion2\ejercicio_01.exe
+3. Y ejecuta:
+   ```cmd
+   .\Seccion2\ejercicio_01.exe
